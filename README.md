@@ -28,6 +28,9 @@ The Global Intention-Based model describes a lighting show as a set of continuou
     $$ I_{\text{peak}}(g, t) = \max_{i \in g}(I_i(t)) $$
     where $g$ is the set of luminaires in the group and $I_i(t)$ is the intensity of an individual luminaire.
 
+    **The Cauchy-Schwarz Inequality**\
+$$\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)$$
+
 *   **Spatial Intensity Gradient ($\nabla_S I$)**: Measures the sharpness of the intensity distribution *across the fixtures within a group* at a single frame. This feature is crucial for distinguishing between a stark, high-contrast look where a single fixture is highlighted, and a smooth, cohesive wash of light. A high gradient value indicates a sharp falloff in brightness between adjacent fixtures (a "spiky" look), while a low value signifies a smooth, sine-like intensity distribution across the group (a "wash" or "fan"). This is a spatial metric, not a measure of temporal change.
     ```math
     \nabla_S I(g, t) = \frac{1}{N_{\text{fixtures}} - 1} \sum_{i=2}^{N_{\text{fixtures}}} |I_i(t) - I_{i-1}(t)|
