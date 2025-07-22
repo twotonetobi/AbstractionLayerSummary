@@ -25,9 +25,9 @@ The following sections detail the "Global Intention-Based" component of this lay
 The Global Intention-Based model describes a lighting show as a set of continuous feature curves for each defined group of luminaires. These curves represent the collective behavior and artistic intent for that group over time. The following key parameters are extracted:
 
 *   **Intensity of Peak absolute ($I_{\text{peak}}$)**: Represents the maximum brightness of any single fixture within a group at a given moment. This feature captures the absolute peak energy output of the group, essential for identifying accents and moments of high intensity.
-    ```math
+    $$
     I_{\text{peak}}(g, t) = \max_{i \in g}(I_i(t))
-    ```
+    $$
     where $g$ is the set of luminaires in the group and $I_i(t)$ is the intensity of an individual luminaire.
 
 *   **Spatial Intensity Gradient ($\nabla_S I$)**: Measures the sharpness of the intensity distribution *across the fixtures within a group* at a single frame. This feature is crucial for distinguishing between a stark, high-contrast look where a single fixture is highlighted, and a smooth, cohesive wash of light. A high gradient value indicates a sharp falloff in brightness between adjacent fixtures (a "spiky" look), while a low value signifies a smooth, sine-like intensity distribution across the group (a "wash" or "fan"). This is a spatial metric, not a measure of temporal change.
