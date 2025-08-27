@@ -24,9 +24,9 @@ The Global Intention-Based model describes a lighting show as a set of continuou
 
 *   **Intensity of Peak absolute ($I_{\text{peak}}$)**: Represents the maximum brightness of any single fixture within a group at a given moment. This feature captures the absolute peak energy output of the group, essential for identifying accents and moments of high intensity.
   
-    $$
-    I_{\text{peak}}(g, t) = \max_{i \in g}(I_i(t))
-    $$
+    ```math
+    I_{\text{peak}}(g, t) = \max_{i \in g}\, I_i(t)
+    ```
     
     where $g$ is the set of luminaires in the group and $I_i(t)$ is the intensity of an individual luminaire.
 
