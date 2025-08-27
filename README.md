@@ -23,15 +23,19 @@ This approach yields several critical benefits that make AI-driven generation fe
 The Global Intention-Based model describes a lighting show as a set of continuous feature curves for each defined group of luminaires. These curves represent the collective behavior and artistic intent for that group over time. The following key parameters are extracted:
 
 *   **Intensity of Peak absolute ($I_{\text{peak}}$)**: Represents the maximum brightness of any single fixture within a group at a given moment. This feature captures the absolute peak energy output of the group, essential for identifying accents and moments of high intensity.
+  
     $$
     I_{\text{peak}}(g, t) = \max_{i \in g}(I_i(t))
     $$
+    
     where $g$ is the set of luminaires in the group and $I_i(t)$ is the intensity of an individual luminaire.
 
 *   **Spatial Intensity Gradient ($\nabla_S I$)**: Measures the sharpness of the intensity distribution *across the fixtures within a group* at a single frame. This feature is crucial for distinguishing between a stark, high-contrast look where a single fixture is highlighted, and a smooth, cohesive wash of light. A high gradient value indicates a sharp falloff in brightness between adjacent fixtures (a "spiky" look), while a low value signifies a smooth intensity distribution across the group (a "wash" or "fan"). This is a spatial metric, not a measure of temporal change.
+  
     $$
     \nabla_S I(g, t) = \frac{1}{N_{\text{fixtures}} - 1} \sum_{i=2}^{N_{\text{fixtures}}} |I_i(t) - I_{i-1}(t)|
     $$
+    
     where fixtures $i$ in group $g$ are spatially ordered, and $I_i(t)$ is the intensity of an individual fixture.
 
 *   **AF Peak Density ($\rho_{\text{peak}}$)**: An "Alternating Factor" that quantifies the spatial complexity of the intensity distribution across the group at a single frame. A low value indicates a simple look with one or few dominant light sources, while a high value signifies a complex pattern with many alternating points of light.
