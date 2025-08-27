@@ -22,7 +22,7 @@ This approach yields several critical benefits that make AI-driven generation fe
 
 The Global Intention-Based model describes a lighting show as a set of continuous feature curves for each defined group of luminaires. These curves represent the collective behavior and artistic intent for that group over time. The following key parameters are extracted:
 
-*   **Intensity of Peak absolute ($I_{\text{peak}}$)**: Represents the maximum brightness of any single fixture within a group at a given moment. This feature captures the absolute peak energy output of the group, essential for identifying accents and moments of high intensity.
+**Intensity of Peak absolute ($I_{\text{peak}}$)**: Represents the maximum brightness of any single fixture within a group at a given moment. This feature captures the absolute peak energy output of the group, essential for identifying accents and moments of high intensity.
   
 $$
 I_{\mathrm{peak}}(g,t) = \max_{i \in g} I_i(t)
@@ -30,7 +30,7 @@ $$
     
 where $g$ is the set of luminaires in the group and $I_i(t)$ is the intensity of an individual luminaire.
 
-*   **Spatial Intensity Gradient ($\nabla_S I$)**: Measures the sharpness of the intensity distribution *across the fixtures within a group* at a single frame. This feature is crucial for distinguishing between a stark, high-contrast look where a single fixture is highlighted, and a smooth, cohesive wash of light. A high gradient value indicates a sharp falloff in brightness between adjacent fixtures (a "spiky" look), while a low value signifies a smooth intensity distribution across the group (a "wash" or "fan"). This is a spatial metric, not a measure of temporal change.
+**Spatial Intensity Gradient ($\nabla_S I$)**: Measures the sharpness of the intensity distribution *across the fixtures within a group* at a single frame. This feature is crucial for distinguishing between a stark, high-contrast look where a single fixture is highlighted, and a smooth, cohesive wash of light. A high gradient value indicates a sharp falloff in brightness between adjacent fixtures (a "spiky" look), while a low value signifies a smooth intensity distribution across the group (a "wash" or "fan"). This is a spatial metric, not a measure of temporal change.
   
 $$
 \nabla_S I(g, t) = \frac{1}{N_{\text{fixtures}} - 1} \sum_{i=2}^{N_{\text{fixtures}}} |I_i(t) - I_{i-1}(t)|
@@ -38,7 +38,7 @@ $$
     
 where fixtures $i$ in group $g$ are spatially ordered, and $I_i(t)$ is the intensity of an individual fixture.
 
-*   **AF Peak Density ($\rho_{\text{peak}}$)**: An "Alternating Factor" that quantifies the spatial complexity of the intensity distribution across the group at a single frame. A low value indicates a simple look with one or few dominant light sources, while a high value signifies a complex pattern with many alternating points of light.
+**AF Peak Density ($\rho_{\text{peak}}$)**: An "Alternating Factor" that quantifies the spatial complexity of the intensity distribution across the group at a single frame. A low value indicates a simple look with one or few dominant light sources, while a high value signifies a complex pattern with many alternating points of light.
 
 $$
 \rho_{\text{peak}}(g, t) = \frac{N_{\text{peaks}}(g, t)}{N_{\text{fixtures}}}
@@ -46,7 +46,7 @@ $$
 
 where $N_{\text{peaks}}$ is the number of distinct spatial intensity peaks across the fixtures in group $g$ at time $t$.
 
-*   **Intensity of Minima Inverse ($I-inv{\text{min\inv}}$)**: This metric captures the contrast or dynamic range within the group. By inverting the minimum intensity value, a score near 1.0 indicates high contrast (at least one fixture is near zero intensity), while a score near 0 indicates low contrast (all fixtures are illuminated).
+**Intensity of Minima Inverse ($I-inv{\text{min\_inv}}$)**: This metric captures the contrast or dynamic range within the group. By inverting the minimum intensity value, a score near 1.0 indicates high contrast (at least one fixture is near zero intensity), while a score near 0 indicates low contrast (all fixtures are illuminated).
 
 $$
 I-inv{\text{min\inv}}(g, t) = 1 - \min{i \in g}(I-i(t))
