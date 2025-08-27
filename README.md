@@ -49,16 +49,16 @@ where $N_{\text{peaks}}$ is the number of distinct spatial intensity peaks acros
 **Intensity of Minima Inverse ($I-inv{\text{min\_inv}}$)**: This metric captures the contrast or dynamic range within the group. By inverting the minimum intensity value, a score near 1.0 indicates high contrast (at least one fixture is near zero intensity), while a score near 0 indicates low contrast (all fixtures are illuminated).
 
 $$
-I-inv{\text{min\inv}}(g, t) = 1 - \min{i \in g}(I-i(t))
+I-inv{\text{min\_inv}}(g, t) = 1 - \min{i \in g}(I-i(t))
 $$
 
-*   **Color Hue Mean ($\bar{H}$)**: The average hue of all fixtures in the group. This represents the dominant color of the group's output, providing a single value for the overall color aesthetic.
+**Color Hue Mean ($\bar{H}$)**: The average hue of all fixtures in the group. This represents the dominant color of the group's output, providing a single value for the overall color aesthetic.
   
 $$
 \bar{H}(g, t) = \text{mean}_{i \in g}(H_i(t))
 $$
 
-*   **Color Saturation Mean ($\bar{S}$)**: The average saturation of all fixtures in the group. This feature describes the purity or vividness of the dominant color, distinguishing between pastel shades and deeply saturated tones.
+**Color Saturation Mean ($\bar{S}$)**: The average saturation of all fixtures in the group. This feature describes the purity or vividness of the dominant color, distinguishing between pastel shades and deeply saturated tones.
   
 $$
 \bar{S}(g, t) = \text{mean}_{i \in g}(S_i(t))
