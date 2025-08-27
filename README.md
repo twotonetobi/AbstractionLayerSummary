@@ -46,11 +46,14 @@ $$
 
 where $N_{\text{peaks}}$ is the number of distinct spatial intensity peaks across the fixtures in group $g$ at time $t$.
 
-### Intensity of Minima Inverse (\(I_{\text{min\_inv}}\)) This metric captures the contrast or dynamic range within the group. By inverting the minimum intensity value, a score near \(1.0\) indicates high contrast (at least one fixture is near zero intensity), while a score near \(0\) indicates low contrast (all fixtures are illuminated).
+**Contrast Index (inverse-minimum intensity, C)** This metric captures the contrast or dynamic range within the group. By inverting the minimum intensity value, a score near \(1.0\) indicates high contrast (at least one fixture is near zero intensity), while a score near \(0\) indicates low contrast (all fixtures are illuminated).
 
 $$
-I_{\text{min\_inv}}(g,t) = 1 - \min_{i \in g} I_i(t)
+C(g,t) = 1 - \min_{i \in g} I(i,t)
 $$
+
+where \(I(i,t)\) is the intensity of fixture \(i\) at time \(t\), and \(g\) is the set of luminaires in the group.
+
 
 
 **Color Hue Mean ($\bar{H}$)**: The average hue of all fixtures in the group. This represents the dominant color of the group's output, providing a single value for the overall color aesthetic.
