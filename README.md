@@ -28,41 +28,41 @@ $$
 I_{\mathrm{peak}}(g,t) = \max_{i \in g} I_i(t)
 $$
     
-    where $g$ is the set of luminaires in the group and $I_i(t)$ is the intensity of an individual luminaire.
+where $g$ is the set of luminaires in the group and $I_i(t)$ is the intensity of an individual luminaire.
 
 *   **Spatial Intensity Gradient ($\nabla_S I$)**: Measures the sharpness of the intensity distribution *across the fixtures within a group* at a single frame. This feature is crucial for distinguishing between a stark, high-contrast look where a single fixture is highlighted, and a smooth, cohesive wash of light. A high gradient value indicates a sharp falloff in brightness between adjacent fixtures (a "spiky" look), while a low value signifies a smooth intensity distribution across the group (a "wash" or "fan"). This is a spatial metric, not a measure of temporal change.
   
-    $$
-    \nabla_S I(g, t) = \frac{1}{N_{\text{fixtures}} - 1} \sum_{i=2}^{N_{\text{fixtures}}} |I_i(t) - I_{i-1}(t)|
-    $$
+$$
+\nabla_S I(g, t) = \frac{1}{N_{\text{fixtures}} - 1} \sum_{i=2}^{N_{\text{fixtures}}} |I_i(t) - I_{i-1}(t)|
+$$
     
-    where fixtures $i$ in group $g$ are spatially ordered, and $I_i(t)$ is the intensity of an individual fixture.
+where fixtures $i$ in group $g$ are spatially ordered, and $I_i(t)$ is the intensity of an individual fixture.
 
 *   **AF Peak Density ($\rho_{\text{peak}}$)**: An "Alternating Factor" that quantifies the spatial complexity of the intensity distribution across the group at a single frame. A low value indicates a simple look with one or few dominant light sources, while a high value signifies a complex pattern with many alternating points of light.
 
-    $$
-    \rho_{\text{peak}}(g, t) = \frac{N_{\text{peaks}}(g, t)}{N_{\text{fixtures}}}
-    $$
-    
-    where $N_{\text{peaks}}$ is the number of distinct spatial intensity peaks across the fixtures in group $g$ at time $t$.
+$$
+\rho_{\text{peak}}(g, t) = \frac{N_{\text{peaks}}(g, t)}{N_{\text{fixtures}}}
+$$
+
+where $N_{\text{peaks}}$ is the number of distinct spatial intensity peaks across the fixtures in group $g$ at time $t$.
 
 *   **Intensity of Minima Inverse ($I_{\text{min\_inv}}$)**: This metric captures the contrast or dynamic range within the group. By inverting the minimum intensity value, a score near 1.0 indicates high contrast (at least one fixture is near zero intensity), while a score near 0 indicates low contrast (all fixtures are illuminated).
 
-    $$
-    I_{\text{min\_inv}}(g, t) = 1 - \min_{i \in g}(I_i(t))
-    $$
+$$
+I_{\text{min\_inv}}(g, t) = 1 - \min_{i \in g}(I_i(t))
+$$
 
 *   **Color Hue Mean ($\bar{H}$)**: The average hue of all fixtures in the group. This represents the dominant color of the group's output, providing a single value for the overall color aesthetic.
   
-    $$
-    \bar{H}(g, t) = \text{mean}_{i \in g}(H_i(t))
-    $$
+$$
+\bar{H}(g, t) = \text{mean}_{i \in g}(H_i(t))
+$$
 
 *   **Color Saturation Mean ($\bar{S}$)**: The average saturation of all fixtures in the group. This feature describes the purity or vividness of the dominant color, distinguishing between pastel shades and deeply saturated tones.
   
-    $$
-    \bar{S}(g, t) = \text{mean}_{i \in g}(S_i(t))
-    $$
+$$
+\bar{S}(g, t) = \text{mean}_{i \in g}(S_i(t))
+$$
 
 ---
 
